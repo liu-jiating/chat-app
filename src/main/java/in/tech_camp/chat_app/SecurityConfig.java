@@ -16,7 +16,7 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http
-      .csrf(AbstractHttpConfigurer::disable)
+    .csrf(AbstractHttpConfigurer::disable)
       .authorizeHttpRequests(authorizeRequests -> authorizeRequests
         //以下でログアウト状態でも実行できるGETリクエストを記述する
         .requestMatchers("/css/**", "/users/sign_up", "/users/login").permitAll()
@@ -25,7 +25,7 @@ public class SecurityConfig {
         //上記以外のリクエストは認証されたユーザーのみ許可される(要ログイン)
         .anyRequest().authenticated())
 
-        .formLogin(login -> login
+      .formLogin(login -> login
         //ログインフォームのボタンをクリックした時に送信するパス
         .loginProcessingUrl("/login")
         //ログインページのパスを設定
