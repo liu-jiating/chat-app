@@ -25,6 +25,8 @@ import in.tech_camp.chat_app.repository.RoomRepository;
 import in.tech_camp.chat_app.repository.RoomUserRepository;
 import in.tech_camp.chat_app.validation.ValidationOrder;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Controller
 @AllArgsConstructor
@@ -78,4 +80,5 @@ public class MessageController {
 
     return "redirect:/rooms/" + roomId + "/messages";
   }
+
 }
