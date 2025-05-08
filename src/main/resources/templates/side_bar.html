@@ -10,21 +10,16 @@
 
     </div>
     <div class="create-room">
-      <a href="#">チャットを作成する</a>
+      <a th:href="@{/rooms/new}">チャットを作成する</a>
     </div>
   </div>
 
    <div class="rooms">
+    <div th:each="room : ${rooms}" class="room">
     <div class="room-name">
-      <a href="#">techroom1</a>
+      <a href="#" th:text="${room.name}">techroom</a>
     </div>
-    <div class="room-name">
-      <a href="#">techroom2</a>
-    </div>
-    <div class="room-name">
-      <a href="#">techroom3</a>
     </div>
    </div>
-
   </div>
 </html>
