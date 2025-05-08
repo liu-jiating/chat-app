@@ -44,7 +44,7 @@ public class RoomController {
     model.addAttribute("rooms", roomList);
     return "rooms/index";
   }
-  
+
   @GetMapping("/rooms/new")
   public String showRoomNew(@AuthenticationPrincipal CustomUserDetail currentUser, Model model){
     List<UserEntity> users = userRepository.findAllExcept(currentUser.getId());
@@ -84,6 +84,5 @@ public class RoomController {
       }
     }
     return "redirect:/";
-  
   }
 }
